@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Progress</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    /* Additional styles specific to the Personal Progress page */
+    .progress-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .progress-section h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .progress-section p {
+      margin-bottom: 1rem;
+    }
+
+    .progress-wrapper {
+      margin: 1rem 0;
+    }
+
+    /* Styling the native progress bar */
+    progress {
+      width: 100%;
+      height: 20px;
+      border-radius: 10px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: #f3f3f3;
+      border-radius: 10px;
+    }
+
+    progress::-webkit-progress-value {
+      border-radius: 10px;
+      background: #007BFF;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header: Reusing the common header and navigation -->
+  <header>
+    <div class="container header-container">
+      <h1 class="site-title">Personal Progress</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Dashboard</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="society.html">Societal</a></li>
+          <li><a href="health.html">Health &amp; Sport</a></li>
+          <li><a href="spiritual.html">Spiritual</a></li>
+          <li><a href="scout.html">Scout</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="container" style="width:90%; margin:2rem auto;">
+    <!-- Section: Very Low Patience -->
+    <section class="progress-section" id="patience-section">
+      <h2>Very Low Patience</h2>
+      <p><strong>Solution:</strong> Engage in more groupwork with younger, same-age, and older people.</p>
+      <div class="progress-wrapper">
+        <!-- Progress bar for sessions completed; target is 20 -->
+        <progress id="patienceProgress" max="20"></progress>
+        <span id="patienceText"></span>
+      </div>
+    </section>
+
+    <!-- Section: Procrastination -->
+    <section class="progress-section" id="procrastination-section">
+      <h2>Procrastination</h2>
+      <p><strong>Solution:</strong> Use an agenda to plan the week ahead.</p>
+      <div class="progress-wrapper">
+        <!-- Progress bar for weeks planned; target is 16 -->
+        <progress id="agendaProgress" max="16"></progress>
+        <span id="agendaText"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 My Progress Project</p>
+    </div>
+  </footer>
+
+  <!-- Inline JavaScript to update progress using hard-coded values -->
+  <script>
+    // Change these default values as needed.
+    const patienceCurrent = 3; // CHANGE HERE
+    const patienceTarget = 20; // CHANGE HERE
+    const agendaCurrent = 3; // CHANGE HERE
+    const agendaTarget = 10; // CHANGE HERE
+
+    // Update the Patience section.
+    const patienceProgressElem = document.getElementById('patienceProgress');
+    const patienceTextElem = document.getElementById('patienceText');
+    patienceProgressElem.value = patienceCurrent;
+    patienceTextElem.textContent = `${patienceCurrent} / ${patienceTarget} Patience Score`;
+
+    // Update the Procrastination section.
+    const agendaProgressElem = document.getElementById('agendaProgress');
+    const agendaTextElem = document.getElementById('agendaText');
+    agendaProgressElem.value = agendaCurrent;
+    agendaTextElem.textContent = `${agendaCurrent} / ${agendaTarget} weeks planned`;
+  </script>
+</body>
+</html>

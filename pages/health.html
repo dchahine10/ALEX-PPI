@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health &amp; Sport Progress</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Page-specific styles for Health &amp; Sport */
+    .progress-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .progress-section h2 {
+      margin-bottom: 0.5rem;
+    }
+    .progress-section p {
+      margin-bottom: 1rem;
+    }
+    .chart-container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+    }
+    .average-display {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <h1 class="site-title">Health &amp; Sport Progress</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Dashboard</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="society.html">Societal</a></li>
+          <li><a href="health.html">Health &amp; Sport</a></li>
+          <li><a href="spiritual.html">Spiritual</a></li>
+          <li><a href="scout.html">Scout</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+  
+  <main class="container" style="width:90%; margin:2rem auto;">
+    <!-- Section 1: Running Performance with Line Graph -->
+    <section class="progress-section" id="running-section">
+      <h2>Running Performance</h2>
+      <p><strong>Solution:</strong> Achieve a running time of 50m in 7.5 seconds. Add your running times to track your progress over time.</p>
+      <div class="chart-container">
+        <!-- Canvas element where Chart.js will render the line graph -->
+        <canvas id="runningChart"></canvas>
+      </div>
+      <!-- Display the average running time -->
+      <div class="average-display" id="runningAverage">Average Running Time: -- sec</div>
+    </section>
+    
+    <!-- Section 2: Calorie Management with Doughnut Chart -->
+    <section class="progress-section" id="calorie-section">
+      <h2>Calorie Management</h2>
+      <p><strong>Solution:</strong> Practice more sports and monitor your calorie intake to reach your target.</p>
+      <div class="chart-container" style="position: relative; height:300px; width:300px; margin: auto;">
+        <canvas id="calorieChart"></canvas>
+      </div>
+      <div class="average-display" id="calorieInfo"></div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 My Progress Project</p>
+    </div>
+  </footer>
+  
+  <!-- Inline JavaScript for chart and progress updates -->
+  <script>
+    // --- Running Performance Section ---
+    // Hard-coded array of running times (in seconds). Update these values manually as you add new runs.
+    const runTimes = [9.2, 8.8, 8.0, 7.9, 8.0];  // Sample data; add your new times here.
+    // Generate labels based on the number of runs.
+    const runLabels = runTimes.map((_, index) => `Run ${index + 1}`);
+    // Calculate the average running time.
+    const sumTimes = runTimes.reduce((sum, time) => sum + time, 0);
+    const averageTime = runTimes.length ? (sumTimes / runTimes.length).toFixed(2) : 0;
+    // Display the average running time below the chart.
+    document.getElementById('runningAverage').textContent = `Average Running Time: ${averageTime} sec`;
+    // Create a line chart using Chart.js to display running times.
+    const ctxRunning = document.getElementById('runningChart').getContext('2d');
+    const runningChart = new Chart(ctxRunning, {
+      type: 'line',
+      data: {
+        labels: runLabels,
+        datasets: [{
+          label: 'Running Time (sec)',
+          data: runTimes,
+          fill: false,
+          borderColor: '#007BFF',
+          tension: 0.1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
+            title: {
+              display: true,
+              text: 'Time (sec)'
+            }
+          }
+        }
+      }
+    });
+    
+    // --- Calorie Management Section using Doughnut Chart ---
+    // Define baseline, target, and current calorie intake values.
+    const baselineCal = 3000;  // Baseline calorie intake (worst-case scenario) in cal/week.
+    const targetCal = 2200;    // Desired calorie intake in cal/week.
+    const currentCal = 2500;   // Current average calorie intake.
+    // Calculate progress percentage toward the target.
+    let calorieProgressPercentage = ((baselineCal - currentCal) / (baselineCal - targetCal)) * 100;
+    calorieProgressPercentage = Math.max(0, Math.min(100, calorieProgressPercentage));
+    // Prepare data for the doughnut chart.
+    const calorieData = {
+      labels: ['Progress', 'Remaining'],
+      datasets: [{
+        data: [calorieProgressPercentage, 100 - calorieProgressPercentage],
+        backgroundColor: ['#007BFF', '#e0e0e0']
+      }]
+    };
+    // Create the doughnut chart.
+    const ctxCalorie = document.getElementById('calorieChart').getContext('2d');
+    const calorieChart = new Chart(ctxCalorie, {
+      type: 'doughnut',
+      data: calorieData,
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+        cutout: '70%',
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+    // Update the calorie information text.
+    document.getElementById('calorieInfo').textContent =
+      `Current Intake: ${currentCal} cal/week (${calorieProgressPercentage.toFixed(0)}% progress toward ${targetCal} cal/week)`;
+  </script>
+</body>
+</html>

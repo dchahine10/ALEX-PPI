@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Progress Dashboard</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-...your-integrity-hash..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="container header-container">
+      <!-- Site title displayed instead of a logo -->
+      <h1 class="site-title">My Progress Dashboard</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="pages/personal.html">Personal</a></li>
+          <li><a href="pages/society.html">Societal</a></li>
+          <li><a href="pages/health.html">Health &amp; Sport</a></li>
+          <li><a href="pages/spiritual.html">Spiritual</a></li>
+          <li><a href="pages/scout.html">Scout</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile navigation toggle -->
+      <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <!-- Personal Level Card -->
+      <div class="card" id="personal-card">
+        <div class="card-image personal-bg">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="card-content">
+          <h2>Personal Level</h2>
+          <p>Work on improving your patience and reducing procrastination.</p>
+          <a href="pages/personal.html" class="btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Societal Level Card -->
+      <div class="card" id="society-card">
+        <div class="card-image society-bg">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="card-content">
+          <h2>Societal &amp; National Belonging</h2>
+          <p>Enhance your role in society and explore local cultural knowledge.</p>
+          <a href="pages/society.html" class="btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Health & Sport Level Card -->
+      <div class="card" id="health-card">
+        <div class="card-image health-bg">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="card-content">
+          <h2>Health &amp; Sport Level</h2>
+          <p>Improve physical endurance and manage your calorie intake.</p>
+          <a href="pages/health.html" class="btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Spiritual Level Card -->
+      <div class="card" id="spiritual-card">
+        <div class="card-image spiritual-bg">
+          <i class="fas fa-praying-hands"></i>
+        </div>
+        <div class="card-content">
+          <h2>Spiritual Level</h2>
+          <p>Increase your religious engagement and deepen your spiritual knowledge.</p>
+          <a href="pages/spiritual.html" class="btn">View Details</a>
+        </div>
+      </div>
+
+      <!-- Scout Level Card -->
+      <div class="card" id="scout-card">
+        <div class="card-image scout-bg">
+          <i class="fas fa-compass"></i>
+        </div>
+        <div class="card-content">
+          <h2>Scout Level</h2>
+          <p>Learn new skills and expand your network within scouting communities.</p>
+          <a href="pages/scout.html" class="btn">View Details</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 My Progress Project</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for interactivity -->
+  <script src="js/script.js"></script>
+</body>
+</html>

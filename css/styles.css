@@ -1,0 +1,211 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Card Image using Gradient Backgrounds */
+.card-image {
+  position: relative;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  display: flex;              /* Use Flexbox to center content */
+  align-items: center;        /* Vertically center */
+  justify-content: center;    /* Horizontally center */
+  color: #fff;                /* Icon color */
+}
+
+/* Icon Styles (Font Awesome) */
+.card-image i {
+  font-size: 3rem;           /* Adjust the size as needed */
+}
+
+/* Gradient Backgrounds for Each Card */
+.personal-bg {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.society-bg {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.health-bg {
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+.spiritual-bg {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.scout-bg {
+  background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);
+}
+
+/* Body and Typography */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 1rem 0;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+}
+
+.nav-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: #007BFF;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
+
+/* Dashboard Grid */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Card Styles */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Image using Gradient Backgrounds */
+.card-image {
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+}
+
+.personal-bg {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.society-bg {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+
+.health-bg {
+  background: linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+.spiritual-bg {
+  background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.scout-bg {
+  background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);
+}
+
+/* Card Content */
+.card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-content h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  padding: 0.75rem;
+  background: #007BFF;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}

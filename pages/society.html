@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Societal & National Belonging Progress</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    /* Additional styles for Societal page sections */
+    .progress-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .progress-section h2 {
+      margin-bottom: 0.5rem;
+    }
+    .progress-section p {
+      margin-bottom: 1rem;
+    }
+    .progress-wrapper {
+      margin: 1rem 0;
+    }
+    progress {
+      width: 100%;
+      height: 20px;
+      border-radius: 10px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    progress::-webkit-progress-bar {
+      background-color: #f3f3f3;
+      border-radius: 10px;
+    }
+    progress::-webkit-progress-value {
+      border-radius: 10px;
+      background: #007BFF;
+    }
+    /* Styles for the NGO sub-sections */
+    .ngo-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .ngo-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .ngo-item h3 {
+      margin-bottom: 0.5rem;
+    }
+    /* Styles for City Research area */
+    .cities-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+    }
+    .city-block {
+      flex: 1 1 30%;
+      background: #fff;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 250px;
+    }
+    .city-block h3 {
+      margin-bottom: 0.5rem;
+    }
+    .city-block p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header: Consistent header with navigation -->
+  <header>
+    <div class="container header-container">
+      <h1 class="site-title">Societal & National Belonging Progress</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Dashboard</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="society.html">Societal</a></li>
+          <li><a href="health.html">Health &amp; Sport</a></li>
+          <li><a href="spiritual.html">Spiritual</a></li>
+          <li><a href="scout.html">Scout</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <main class="container" style="width:90%; margin:2rem auto;">
+    <!-- Section 1: Unfunctional Agent of Society -->
+    <section class="progress-section" id="ngo-section">
+      <h2>Unfunctional Agent of Society</h2>
+      <p><strong>Solution:</strong> Participate in the meetings/activities of the organizations you are involved with.</p>
+      <div class="ngo-container">
+        <!-- Scout NGO -->
+        <div class="ngo-item">
+          <h3>Scout</h3>
+          <div class="progress-wrapper">
+            <progress id="scoutProgress" max="25"></progress>
+            <span id="scoutText"></span>
+          </div>
+        </div>
+        <!-- Red Cross NGO -->
+        <div class="ngo-item">
+          <h3>Red Cross</h3>
+          <div class="progress-wrapper">
+            <progress id="redCrossProgress" max="25"></progress>
+            <span id="redCrossText"></span>
+          </div>
+        </div>
+        <!-- Religious Movement NGO -->
+        <div class="ngo-item">
+          <h3>Religious Movement</h3>
+          <div class="progress-wrapper">
+            <progress id="religiousProgress" max="25"></progress>
+            <span id="religiousText"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Low Knowledge in Lebanese Cities -->
+    <section class="progress-section" id="cities-section">
+      <h2>Low Knowledge in Lebanese Cities</h2>
+      <p><strong>Solution:</strong> Research cities around your living area. Write your findings and note the city’s name.</p>
+      <div class="cities-container">
+        <!-- City Block 1 -->
+        <div class="city-block">
+          <h3>Beirut</h3>
+          <p id="beirutResearch">[Your research about Beirut goes here]</p>
+        </div>
+        <!-- City Block 2 -->
+        <div class="city-block">
+          <h3>Tripoli</h3>
+          <p id="tripoliResearch">[Your research about Tripoli goes here]</p>
+        </div>
+        <!-- City Block 3 -->
+        <div class="city-block">
+          <h3>Sidon</h3>
+          <p id="sidonResearch">[Your research about Sidon goes here]</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 My Progress Project</p>
+    </div>
+  </footer>
+
+  <!-- Inline JavaScript for updating hard-coded progress values -->
+  <script>
+    // *** NGO Section Progress Values ***
+    // For Scout NGO: meetings attended out of target (e.g., 2 out of 5)
+    const scoutCurrent = 2; // CHANGE HERE
+    const scoutTarget = 25; // CHANGE HERE
+    const scoutProgressElem = document.getElementById('scoutProgress');
+    const scoutTextElem = document.getElementById('scoutText');
+    scoutProgressElem.value = scoutCurrent;
+    scoutTextElem.textContent = `${scoutCurrent} / ${scoutTarget} meetings attended`;
+
+    // For Red Cross NGO: meetings attended out of target (e.g., 1 out of 3)
+    const redCrossCurrent = 1; // CHANGE HERE
+    const redCrossTarget = 25; // CHANGE HERE
+    const redCrossProgressElem = document.getElementById('redCrossProgress');
+    const redCrossTextElem = document.getElementById('redCrossText');
+    redCrossProgressElem.value = redCrossCurrent;
+    redCrossTextElem.textContent = `${redCrossCurrent} / ${redCrossTarget} meetings attended`;
+
+    // For Religious Movement NGO: meetings attended out of target (e.g., 4 out of 7)
+    const religiousCurrent = 4; // CHANGE HERE
+    const religiousTarget = 25; // CHANGE HERE
+    const religiousProgressElem = document.getElementById('religiousProgress');
+    const religiousTextElem = document.getElementById('religiousText');
+    religiousProgressElem.value = religiousCurrent;
+    religiousTextElem.textContent = `${religiousCurrent} / ${religiousTarget} meetings attended`;
+
+    // *** Cities Section Research Texts ***
+    // You can modify the inner text below to update your research findings.
+    document.getElementById('beirutResearch').textContent = "Research details about Beirut: history, culture, and personal observations.";
+    document.getElementById('tripoliResearch').textContent = "Research details about Tripoli: notable landmarks, recent events, and local tips.";
+    document.getElementById('sidonResearch').textContent = "Research details about Sidon: historical significance, modern developments, and visitor experiences.";
+  </script>
+</body>
+</html>

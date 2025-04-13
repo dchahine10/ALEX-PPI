@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Spiritual Progress</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../css/styles.css"/>
+  <style>
+    /* Page-specific styles for the Spiritual page */
+    .progress-section {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .progress-section h2 {
+      margin-bottom: 0.5rem;
+    }
+    .progress-section p {
+      margin-bottom: 1rem;
+    }
+    .progress-wrapper {
+      margin: 1rem 0;
+    }
+    /* Progress bar styling */
+    progress {
+      width: 100%;
+      height: 20px;
+      border-radius: 10px;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    progress::-webkit-progress-bar {
+      background-color: #f3f3f3;
+      border-radius: 10px;
+    }
+    progress::-webkit-progress-value {
+      border-radius: 10px;
+      background: #007BFF;
+    }
+    /* Checklist styling for Bible reading */
+    #bibleChecklist {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1rem;
+    }
+    #bibleChecklist li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <h1 class="site-title">Spiritual Progress</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html">Dashboard</a></li>
+          <li><a href="personal.html">Personal</a></li>
+          <li><a href="society.html">Societal</a></li>
+          <li><a href="health.html">Health &amp; Sport</a></li>
+          <li><a href="spiritual.html">Spiritual</a></li>
+          <li><a href="scout.html">Scout</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container" style="width:90%; margin:2rem auto;">
+    <!-- Section 1: Church Visits -->
+    <section class="progress-section" id="church-section">
+      <h2>Church Visits</h2>
+      <p><strong>Solution:</strong> Attend church 28 times before November 2025.</p>
+      <div class="progress-wrapper">
+        <progress id="churchProgress" max="28"></progress>
+        <span id="churchText"></span>
+      </div>
+    </section>
+    
+    <!-- Section 2: Bible Reading -->
+    <section class="progress-section" id="bible-section">
+      <h2>Bible Reading</h2>
+      <p><strong>Solution:</strong> Read the following texts: Gospel of Mark, Gospel of John, Gospel of Matthew, Gospel of Luke, and Proverbs.</p>
+      <div class="progress-wrapper">
+        <progress id="bibleProgress" max="5"></progress>
+        <span id="bibleText"></span>
+      </div>
+      <ul id="bibleChecklist"></ul>
+    </section>
+    
+    <!-- Section 3: Harake Meetings -->
+    <section class="progress-section" id="harake-section">
+      <h2>Harake Meetings</h2>
+      <p><strong>Solution:</strong> Attend meetings of the 'harake' movement to learn more about God.</p>
+      <div class="progress-wrapper">
+        <progress id="harakeProgress" max="25"></progress>
+        <span id="harakeText"></span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 My Progress Project</p>
+    </div>
+  </footer>
+
+  <!-- Inline JavaScript to update progress values -->
+  <script>
+    // --- Church Visits Section ---
+    // Update the current number of church visits as needed.
+    const churchCurrent = 10;  // For example, 10 visits so far.
+    const churchTarget = 28;
+    document.getElementById('churchProgress').value = churchCurrent;
+    document.getElementById('churchText').textContent = `${churchCurrent} / ${churchTarget} visits completed`;
+
+    // --- Bible Reading Section ---
+    // Define the Bible texts and whether they have been read (true/false).
+    const bibleTexts = [
+      { name: "Gospel of Mark", done: true },
+      { name: "Gospel of John", done: false },
+      { name: "Gospel of Matthew", done: false },
+      { name: "Gospel of Luke", done: true },
+      { name: "Proverbs", done: false }
+    ];
+    const bibleCompleted = bibleTexts.filter(text => text.done).length;
+    document.getElementById('bibleProgress').value = bibleCompleted;
+    document.getElementById('bibleText').textContent = `${bibleCompleted} / 5 texts read`;
+    const bibleChecklistElem = document.getElementById('bibleChecklist');
+    bibleTexts.forEach(text => {
+      const li = document.createElement('li');
+      li.textContent = text.name + (text.done ? " ✓" : " ✗");
+      bibleChecklistElem.appendChild(li);
+    });
+
+    // --- Harake Meetings Section ---
+    // Update the current number of Harake meetings attended.
+    const harakeCurrent = 0;   // Update this value as you attend meetings.
+    const harakeTarget = 25;
+    document.getElementById('harakeProgress').value = harakeCurrent;
+    document.getElementById('harakeText').textContent = `${harakeCurrent} / ${harakeTarget} meetings attended`;
+  </script>
+</body>
+</html>
