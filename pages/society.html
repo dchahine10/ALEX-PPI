@@ -137,17 +137,17 @@
       <div class="cities-container">
         <!-- City Block 1 -->
         <div class="city-block">
-          <h3>Beirut</h3>
+          <h3>City 1</h3>
           <p id="beirutResearch">[Your research about Beirut goes here]</p>
         </div>
         <!-- City Block 2 -->
         <div class="city-block">
-          <h3>Tripoli</h3>
+          <h3>City 2</h3>
           <p id="tripoliResearch">[Your research about Tripoli goes here]</p>
         </div>
         <!-- City Block 3 -->
         <div class="city-block">
-          <h3>Sidon</h3>
+          <h3>City 3</h3>
           <p id="sidonResearch">[Your research about Sidon goes here]</p>
         </div>
       </div>
@@ -164,7 +164,7 @@
   <script>
     // *** NGO Section Progress Values ***
     // For Scout NGO: meetings attended out of target (e.g., 2 out of 5)
-    const scoutCurrent = 2; // CHANGE HERE
+    const scoutCurrent = 0; // CHANGE HERE
     const scoutTarget = 25; // CHANGE HERE
     const scoutProgressElem = document.getElementById('scoutProgress');
     const scoutTextElem = document.getElementById('scoutText');
@@ -172,7 +172,7 @@
     scoutTextElem.textContent = `${scoutCurrent} / ${scoutTarget} meetings attended`;
 
     // For Red Cross NGO: meetings attended out of target (e.g., 1 out of 3)
-    const redCrossCurrent = 1; // CHANGE HERE
+    const redCrossCurrent = 0; // CHANGE HERE
     const redCrossTarget = 25; // CHANGE HERE
     const redCrossProgressElem = document.getElementById('redCrossProgress');
     const redCrossTextElem = document.getElementById('redCrossText');
@@ -180,7 +180,7 @@
     redCrossTextElem.textContent = `${redCrossCurrent} / ${redCrossTarget} meetings attended`;
 
     // For Religious Movement NGO: meetings attended out of target (e.g., 4 out of 7)
-    const religiousCurrent = 4; // CHANGE HERE
+    const religiousCurrent = 0; // CHANGE HERE
     const religiousTarget = 25; // CHANGE HERE
     const religiousProgressElem = document.getElementById('religiousProgress');
     const religiousTextElem = document.getElementById('religiousText');
@@ -189,9 +189,9 @@
 
     // *** Cities Section Research Texts ***
     // You can modify the inner text below to update your research findings.
-    document.getElementById('beirutResearch').textContent = "Research details about Beirut: history, culture, and personal observations.";
-    document.getElementById('tripoliResearch').textContent = "Research details about Tripoli: notable landmarks, recent events, and local tips.";
-    document.getElementById('sidonResearch').textContent = "Research details about Sidon: historical significance, modern developments, and visitor experiences.";
+    document.getElementById('beirutResearch').textContent = "Research details about the city: history, culture, and personal observations.";
+    document.getElementById('tripoliResearch').textContent = "Research details about the city: notable landmarks, recent events, and local tips.";
+    document.getElementById('sidonResearch').textContent = "Research details about the city: historical significance, modern developments, and visitor experiences.";
   </script>
 </body>
 </html>
