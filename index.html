@@ -3,60 +3,111 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon</title>
-
-  <style>
-    *{box-sizing:border-box;margin:0;padding:0;font-family:"Roboto",sans-serif;color:#f5f5f5}
-    body{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#111}
-    h1{font-size:2.5rem;margin-bottom:1rem;text-align:center}
-    #countdown{display:flex;gap:1rem;font-size:2rem;font-weight:700}
-    #countdown span{min-width:3.5rem;text-align:center;border-radius:.5rem;background:#222;padding:.5rem 0}
-  </style>
+  <title>My Progress Dashboard</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome CDN for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-...your-integrity-hash..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <header>
+    <div class="container header-container">
+      <!-- Site title displayed instead of a logo -->
+      <h1 class="site-title">My Progress Dashboard</h1>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="index.html">Dashboard</a></li>
+          <li><a href="pages/personal.html">Personal</a></li>
+          <li><a href="pages/society.html">Societal</a></li>
+          <li><a href="pages/health.html">Health &amp; Sport</a></li>
+          <li><a href="pages/spiritual.html">Spiritual</a></li>
+          <li><a href="pages/scout.html">Scout</a></li>
+        </ul>
+      </nav>
+      <!-- Mobile navigation toggle -->
+      <button class="menu-toggle" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </header>
 
-  <h1>Will Launch on May 24 7:00 PM</h1>
-  <div id="countdown">
-    <span id="days">00</span>d
-    <span id="hours">00</span>h
-    <span id="minutes">00</span>m
-    <span id="seconds">00</span>s
-  </div>
+  <main>
+    <section class="dashboard">
+      <!-- Personal Level Card -->
+      <div class="card" id="personal-card">
+        <div class="card-image personal-bg">
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="card-content">
+          <h2>Personal Level</h2>
+          <p>Work on improving your patience and reducing procrastination.</p>
+          <a href="pages/personal.html" class="btn">View Details</a>
+        </div>
+      </div>
 
-  <script>
-    (function () {
-      const target = new Date("2025-05-24T19:00:00"); // local TZ
-      const $d = document.getElementById("days"),
-            $h = document.getElementById("hours"),
-            $m = document.getElementById("minutes"),
-            $s = document.getElementById("seconds");
+      <!-- Societal Level Card -->
+      <div class="card" id="society-card">
+        <div class="card-image society-bg">
+          <i class="fas fa-users"></i>
+        </div>
+        <div class="card-content">
+          <h2>Societal &amp; National Belonging</h2>
+          <p>Enhance your role in society and explore local cultural knowledge.</p>
+          <a href="pages/society.html" class="btn">View Details</a>
+        </div>
+      </div>
 
-      function pad(n) { return n.toString().padStart(2, "0"); }
+      <!-- Health & Sport Level Card -->
+      <div class="card" id="health-card">
+        <div class="card-image health-bg">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <div class="card-content">
+          <h2>Health &amp; Sport Level</h2>
+          <p>Improve physical endurance and manage your calorie intake.</p>
+          <a href="pages/health.html" class="btn">View Details</a>
+        </div>
+      </div>
 
-      function tick() {
-        const now = new Date(),
-              diff = target - now;
+      <!-- Spiritual Level Card -->
+      <div class="card" id="spiritual-card">
+        <div class="card-image spiritual-bg">
+          <i class="fas fa-praying-hands"></i>
+        </div>
+        <div class="card-content">
+          <h2>Spiritual Level</h2>
+          <p>Increase your religious engagement and deepen your spiritual knowledge.</p>
+          <a href="pages/spiritual.html" class="btn">View Details</a>
+        </div>
+      </div>
 
-        if (diff <= 0) {
-          document.body.innerHTML = "<h1>We are live!</h1>";
-          clearInterval(timer);
-          return;
-        }
+      <!-- Scout Level Card -->
+      <div class="card" id="scout-card">
+        <div class="card-image scout-bg">
+          <i class="fas fa-compass"></i>
+        </div>
+        <div class="card-content">
+          <h2>Scout Level</h2>
+          <p>Learn new skills and expand your network within scouting communities.</p>
+          <a href="pages/scout.html" class="btn">View Details</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        const sec  = Math.floor(diff / 1000) % 60,
-              min  = Math.floor(diff / 60000) % 60,
-              hr   = Math.floor(diff / 3600000) % 24,
-              day  = Math.floor(diff / 86400000);
+  <footer>
+    <div class="container footer-container">
+      <p>&copy; 2025 My Progress Project</p>
+    </div>
+  </footer>
 
-        $d.textContent = pad(day);
-        $h.textContent = pad(hr);
-        $m.textContent = pad(min);
-        $s.textContent = pad(sec);
-      }
-
-      tick();
-      const timer = setInterval(tick, 1000);
-    })();
-  </script>
+  <!-- JavaScript for interactivity -->
+  <script src="js/script.js"></script>
 </body>
 </html>
