@@ -90,7 +90,7 @@
   <script>
     // --- Running Performance Section ---
     // Hard-coded array of running times (in seconds). Update these values manually as you add new runs.
-    const runTimes = [9.2, 8.8, 8.0, 7.9, 8.0];  // Sample data; add your new times here.
+    const runTimes = [0.0, 0.0, 0.0, 0.0, 0.0];  // Sample data; add your new times here.
     // Generate labels based on the number of runs.
     const runLabels = runTimes.map((_, index) => `Run ${index + 1}`);
     // Calculate the average running time.
@@ -127,9 +127,9 @@
     
     // --- Calorie Management Section using Doughnut Chart ---
     // Define baseline, target, and current calorie intake values.
-    const baselineCal = 3000;  // Baseline calorie intake (worst-case scenario) in cal/week.
-    const targetCal = 2200;    // Desired calorie intake in cal/week.
-    const currentCal = 2500;   // Current average calorie intake.
+    const baselineCal = 2500;  // Baseline calorie intake (worst-case scenario) in cal/week.
+    const targetCal = 1800;    // Desired calorie intake in cal/week.
+    const currentCal = 2200;   // Current average calorie intake.
     // Calculate progress percentage toward the target.
     let calorieProgressPercentage = ((baselineCal - currentCal) / (baselineCal - targetCal)) * 100;
     calorieProgressPercentage = Math.max(0, Math.min(100, calorieProgressPercentage));
