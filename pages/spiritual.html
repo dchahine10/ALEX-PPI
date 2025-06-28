@@ -117,7 +117,7 @@
   <script>
     // --- Church Visits Section ---
     // Update the current number of church visits as needed.
-    const churchCurrent = 10;  // For example, 10 visits so far.
+    const churchCurrent = 0;  // For example, 10 visits so far.
     const churchTarget = 28;
     document.getElementById('churchProgress').value = churchCurrent;
     document.getElementById('churchText').textContent = `${churchCurrent} / ${churchTarget} visits completed`;
@@ -125,10 +125,10 @@
     // --- Bible Reading Section ---
     // Define the Bible texts and whether they have been read (true/false).
     const bibleTexts = [
-      { name: "Gospel of Mark", done: true },
+      { name: "Gospel of Mark", done: false },
       { name: "Gospel of John", done: false },
       { name: "Gospel of Matthew", done: false },
-      { name: "Gospel of Luke", done: true },
+      { name: "Gospel of Luke", done: false },
       { name: "Proverbs", done: false }
     ];
     const bibleCompleted = bibleTexts.filter(text => text.done).length;
